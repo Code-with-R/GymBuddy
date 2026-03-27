@@ -7,6 +7,7 @@ import connectDB from './config/database.js';
 import authRoutes from './routes/authRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import { errorHandler, notFound } from './middleware/errorHandler.js';
+import workoutRoutes from './routes/workoutRoutes.js';
 
 dotenv.config();
 
@@ -31,6 +32,9 @@ app.use(limiter);
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes);
+
+// Add after other routes
+app.use('/api/workouts', workoutRoutes);
 
 // Health check
 app.get('/health', (req, res) => {
