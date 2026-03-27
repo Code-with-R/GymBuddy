@@ -11,6 +11,7 @@ import AdminLogin from './components/Auth/AdminLogin';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import WorkoutPlanner from './pages/WorkoutPlanner';
+import DietPlanner from './pages/DietPlanner';
 
 function App() {
   return (
@@ -65,6 +66,12 @@ function App() {
               <Route path="/workout-planner" element={
                 <ProtectedRoute>
                   <WorkoutPlanner />
+                </ProtectedRoute>
+              } />
+
+              <Route path="/diet-planner" element={
+                <ProtectedRoute>
+                  <DietPlanner />
                 </ProtectedRoute>
               } />
 
