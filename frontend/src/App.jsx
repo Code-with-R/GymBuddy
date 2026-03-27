@@ -10,6 +10,7 @@ import Register from './components/Auth/Register';
 import AdminLogin from './components/Auth/AdminLogin';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
+import WorkoutPlanner from './pages/WorkoutPlanner';
 
 function App() {
   return (
@@ -23,19 +24,19 @@ function App() {
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/admin-login" element={<AdminLogin />} />
-              
+
               <Route path="/dashboard" element={
                 <ProtectedRoute>
                   <Dashboard />
                 </ProtectedRoute>
               } />
-              
+
               <Route path="/profile" element={
                 <ProtectedRoute>
                   <Profile />
                 </ProtectedRoute>
               } />
-              
+
               {/* Placeholder routes for other pages */}
               <Route path="/workout-planner" element={
                 <ProtectedRoute>
@@ -44,7 +45,7 @@ function App() {
                   </div>
                 </ProtectedRoute>
               } />
-              
+
               <Route path="/diet-planner" element={
                 <ProtectedRoute>
                   <div className="max-w-7xl mx-auto px-4 py-8">
@@ -52,7 +53,7 @@ function App() {
                   </div>
                 </ProtectedRoute>
               } />
-              
+
               <Route path="/progress" element={
                 <ProtectedRoute>
                   <div className="max-w-7xl mx-auto px-4 py-8">
@@ -60,6 +61,13 @@ function App() {
                   </div>
                 </ProtectedRoute>
               } />
+
+              <Route path="/workout-planner" element={
+                <ProtectedRoute>
+                  <WorkoutPlanner />
+                </ProtectedRoute>
+              } />
+
             </Routes>
           </main>
           <Footer />
